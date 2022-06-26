@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cricket bat website </title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header>
+
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="#" class="logo"><img width="200px" height="100px" src="data:image/png;base64,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"/><span>.</span></a>
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products"> Bats</a>
+        <a href="#balls"> Balls</a>
+       
+        <a href="#review">Review</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="icons">
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <a href="#" class="fas fa-user"></a>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3 style="color:black">GM cricket bat</h3>
+        <span style="color:black">No.1 High Quality Cricket Bat</span>
+        <p style="color: black;">Gunn & Moore, commonly shortened to GM, is a sports equipment and apparel company founded in 1885 based in Colwick, Nottinghamshire, England that specialises in cricket.</p>
+        <a href="#" class="btn">shop now</a>
+    </div>
+    
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span> about </span> us </h1>
+
+    <div class="row">
+
+        <div class="video-container">
+            <video src="https://cdn.videvo.net/videvo_files/video/premium/getty_109/small_watermarked/istock-913660784_preview.mp4" loop autoplay muted></video>
+            <h3>GM best cricket bat</h3>
+        </div>
+
+        <div class="content">
+            <h3>why choose us?</h3>
+            <p>GM has the most technologically advanced factory in the world and takes pride in continuous innovation with their cricket bats. </p>
+            <p> year's range is their best so far, so let's get into it.</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa3Dr4B7XucXB9RnC290Qr_em9CfBFohwPeQ&usqp=CAU" alt="">
+        <div class="info">
+            <h3>free delivery</h3>
+            <span>on all orders</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa3Dr4B7XucXB9RnC290Qr_em9CfBFohwPeQ&usqp=CAU" alt="">
+        <div class="info">
+            <h3>10 days returns</h3>
+            <span>moneyback guarantee</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa3Dr4B7XucXB9RnC290Qr_em9CfBFohwPeQ&usqp=CAU" alt="">
+        <div class="info">
+            <h3>offer & gifts</h3>
+            <span>on all orders</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG73lvQA-_dAeiddNAHyO-MOFDA6Ek9BZ29Q&usqp=CAU" alt="">
+        <div class="info">
+            <h3>secure paymens</h3>
+            <span>protected by paypal</span>
+        </div>
+    </div>
+   
+</section>
+
+<!-- icons section ends -->
+
+<!-- prodcuts section starts  -->
+
+<section class="products" id="products">
+
+    <h1 class="heading"> latest <span>Bats</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="https://gmcricket.in/media/catalog/product/cache/9bb9d677791f8666003e194c8a94aeff/p/r/prima-signature-plus-english-willow-cricket-bat-1.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> Gm six6 Willow Cricket Bat</h3>
+                <div class="price"> ₹90000/- <span>₹1,00000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="https://gmcricket.in/media/catalog/product/cache/9bb9d677791f8666003e194c8a94aeff/z/e/zelos-ii-maestro-kashmir-willow-cricket-bat.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> grey English Willow Cricket Bat</h3>
+                
+                <div class="price">  <span>₹2,00,000</span>₹1,80,000 </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVeD5pHzP5057erkfdSpLuWzPUfzd8baFGFA&usqp=CAU" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> Prime skyblue edition  Cricket Bat</h3>
+               
+                <div class="price"> ₹2,85,000 <span>₹3,00,000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-20%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_uY8uXYS5EjmIPUYa6XFjYWHs-IlR5y5xYg&usqp=CAU" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> Prime-maxi English Willow Cricket Bat</h3>
+                
+                <div class="price"> ₹1,60,000 <span>₹2,00,000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjuQ4aYeUKBMVrtnTbIABsCFSTIcrHfnDfCg&usqp=CAU" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> English Willow Cricket Bat</h3>
+                <div class="price"> ₹95,000 <span>₹1,00,000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtF5BeNKx49SiczHM3pbO6ICE-jZIsMH6WxA&usqp=CAU" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Prima Signature + English Willow Cricket Bat</h3>
+                <div class="price">  ₹95,000 <span>₹1,00,000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://gmcricket.in/media/catalog/product/cache/9bb9d677791f8666003e194c8a94aeff/c/h/chroma-707-english-willow-cricket-bat_4.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Neon 202 Kashmir Willow Cricket Bat</h3>
+                <div class="price">  ₹95,000 <span>₹1,00,000</span></div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://gmcricket.in/media/catalog/product/cache/9bb9d677791f8666003e194c8a94aeff/n/o/noir-333-english-willow-cricket-bat_12.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Neon 202 Kashmir Willow Cricket Bat</h3>
+                <div class="price">  ₹95,000 <span>₹1,00,000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://gmcricket.in/media/catalog/product/cache/757ea7d2b7282843694bdb6de7a23598/n/e/neon-202-kashmir-willow-cricket-bat_11.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Neon 202 Kashmir Willow Cricket Bat</h3>
+                <div class="price"> ₹95,000 <span>₹1,00,000</span></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- cricket balls section startssssssss ----------------------------------------------------------------------------------------------------------- -->
+<section class="products" id="balls">
+
+    <h1 class="heading"> GM <span>Balls</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyAQK7x9Hy0KCypO6_J0PPnO1R0lBGAVcG0g&usqp=CAU" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> GM Clubman Leather Cricket Ball (red)</h3>
+                <div class="price"> ₹2700 <span>₹3000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaLexC9E_4SM1Y-UEnpFo_j3i1en-Lu3gmwg&usqp=CAU" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> GM Clubman2 Leather Cricket Ball (red)</h3>
+                
+                <div class="price">  ₹2700 <span>₹3000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNxKU51VhVPfiX-naqAz4X_Wf5PTtf3-BxuQ&usqp=CAU" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> GM Clubman3 Leather Cricket Ball (red)</h3>
+               
+                <div class="price"> ₹2850 <span>₹3000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://m.media-amazon.com/images/I/61zClwpAqeL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> GM Clubman4 Leather Cricket Ball (red)</h3>
+                
+                <div class="price"> ₹2850 <span>₹3000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="https://m.media-amazon.com/images/I/51Tn0NO8mVL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3> GM Clubman Leather Cricket Ball (White)</h3>
+                <div class="price"> ₹7200 <span>₹8000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://m.media-amazon.com/images/I/61zkJBOFOXL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>GM Clubman7 Leather Cricket Ball (red)</h3>
+                <div class="price">  ₹2850 <span>₹3000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://m.media-amazon.com/images/I/61zkJBOFOXL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>GM Neo Leather Cricket Ball (red)</h3>
+                <div class="price">  ₹2850 <span>₹3000</span></div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-10%</span>
+            <div class="image">
+                <img src="https://m.media-amazon.com/images/I/51n5JI-wd-L._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>GM Neo2 Leather Cricket Ball (red)</h3>
+                <div class="price">  ₹2700 <span>₹3000</span> </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <span class="discount">-5%</span>
+            <div class="image">
+                <img src="https://m.media-amazon.com/images/I/61V36sldx5L._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                <div class="icons">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>GM Rubber Cricket Ball </h3>
+                <div class="price"> ₹950 <span>₹1000</span></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-------------------------------------------------------------------------------------------------------------------- -->
+<!-- cricket balls section ends -->
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+
+<h1 class="heading">Cricketer <span>review's</span> </h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p>GM cricket bats are high quality bats and hand made,this is favorite bat i score so many centuries it my lucky bat</p>
+        <div class="user">
+            <img src="https://wallpapercave.com/dwp2x/wp4467277.jpg" alt="">
+            <div class="user-info">
+                <h3>Ben stokes</h3>
+                <span>GM Brand Ambassador</span>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p>GM cricket bats are high quality bats and hand made,this is favorite bat i score so many centuries it my lucky bat</p>
+        <div class="user">
+            <img src="https://wallpapercave.com/dwp2x/wp4764084.jpg" alt="">
+            <div class="user-info">
+                <h3>Quinton De Kock</h3>
+                <span>Cricket player</span>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <p>GM cricket bats are high quality bats and hand made,this is favorite bat i score so many centuries it my lucky bat</p>
+        
+        <div class="user">
+            <img src="https://wallpapercave.com/wp/wp5485476.jpg" alt="">
+            <div class="user-info">
+                <h3>Jason Roy</h3>
+                <span>Cricket Player</span>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+    
+</section>
+
+<!-- review section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span> contact </span> us </h1>
+
+    <div class="row">
+
+        <form action="">
+            <input type="text" placeholder="Name" class="box">
+            <input type="email" placeholder="Email" class="box">
+            <input type="number" placeholder="Number" class="box">
+            <textarea name="" class="box" placeholder="Message" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="Send message" class="btn">
+        </form>
+
+        <div class="image">
+            <video src="https://cdn.videvo.net/videvo_files/video/premium/getty_17/small_watermarked/istock-922872728_preview.mp4" loop autoplay muted></video>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#">home</a>
+            <a href="#">about</a>
+            <a href="#">products</a>
+            <a href="#">review</a>
+            <a href="#">contact</a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#">my account</a>
+            <a href="#">my order</a>
+            <a href="#">my favorite</a>
+        </div>
+
+        <div class="box">
+            <h3>locations</h3>
+            <a href="#">india</a>
+            <a href="#">USA</a>
+            <a href="#">japan</a>
+            <a href="#">france</a>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#">+919999999999</a>
+            <a href="#">gmcricketinfo@gmail.com</a>
+            <a href="#">USA ,washington</a>
+            <img src="images/payment.png" alt="">
+        </div>
+
+    </div>
+
+    
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+<script src="bat.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
